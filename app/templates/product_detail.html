@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load cart %}
+{% load custom_filter %}
+{% block content %}
+
+<style>
+.card-img-top,h6 {
+    width: 500px;
+    height: 500px;
+}
+
+</style>
+
+
+<div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
+<img class="card-img-top" src="{{product.image.url}}" alt="Card image"height="600" >
+&nbsp;
+<center><p class="card-text"><b> Price {{product.price|currency}}</b></p></center>
+</div>
+
+
+<form action="/#{{product.id}}" method="POST" class="btn-block">
+    {% csrf_token %}
+    <input hidden type="text" name='product' value='{{product.id}}'>
+   <center> <input type="submit" class=" btn btn-success "
+        value="Add To Cart"></center>
+</form>
+
+
+
+
+<p>{{product.description}}</p>
+{% endblock %}
