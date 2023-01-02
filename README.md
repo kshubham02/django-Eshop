@@ -14,3 +14,6 @@ Technologies Used :
     python - 3.8.10
     django - 4.1.2
     postgresql - 14.5
+    
+    
+    Live link for site  :   http://ec2-54-166-52-174.compute-1.amazonaws.com:8000/store
