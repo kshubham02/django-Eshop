@@ -16,4 +16,4 @@ Technologies Used :
     postgresql - 14.5
     
     
-    Live link for site  :   http://ec2-54-166-52-174.compute-1.amazonaws.com:8000/store
+    Live link for site  :   http://172.19.141.241/store
