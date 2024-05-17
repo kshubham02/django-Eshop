@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+from pathlib import Path  
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
@@ -26,7 +26,7 @@ SECRET_KEY = 'n^popw0p#(8xqyb+n8523)%14a78(z#v(8&z&e_oj-albl#pd8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,13 +77,8 @@ WSGI_APPLICATION = 'Eshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'eshop',
-        'USER': 'postgres',
-        'PASSWORD': 'shubham',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'CONN_MAX_AGE': 600,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
